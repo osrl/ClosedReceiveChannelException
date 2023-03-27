@@ -26,7 +26,7 @@ class CommonGreetingTest {
         routing {
             webSocket("/") {
                 for (frame in incoming) {
-                    assertEquals("null", (frame as Frame.Text).readText())
+                    assertEquals("error", (frame as Frame.Text).readText())
                     outgoing.send(frame)
                 }
             }
